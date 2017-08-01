@@ -1,4 +1,4 @@
-//Blog to learn: https://blog.anudeep2011.com/heavy-light-decomposition/
+//Blog to learn: https://blog.anudeep2011.com/heavy-light-decomposition
 //Topcoder Link for LCA: https://www.topcoder.com/community/data-science/data-science-tutorials/range-minimum-query-and-lowest-common-ancestor/ 
 #include <bits/stdc++.h>
 using namespace std;
