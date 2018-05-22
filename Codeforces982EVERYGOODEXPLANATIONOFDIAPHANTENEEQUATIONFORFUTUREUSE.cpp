@@ -82,17 +82,22 @@ void solve(){
 	ll c=x-y;
 	//Y-X-y+x=0;
 	//X will be k1*n, Y will be k2*m
-	//k1*n-k2*m=c
-	// cout << c << endl;
+	//k1*n-k2*m=c //this is the equation we are solving for
 	ll k1=0,k2=0;
 	ll gc=xGCD(n,m,k1,k2);
 	if(c%gc){
 		cout << -1 << endl;
 		return;
 	}
-	k1*=(c/gc);
-	k2*=(c/gc);
-	k2*=-1;
+	k1*=(c/gc);//this will help in making it (nx+my=c) equal to c irrespective of c's sign
+	k2*=(c/gc);//this will help in making it (nx+my=c) equal to c irrespective of c's sign
+	k2*=-1; // because gcdExtended solves (a*x+b*y=c), if b<0, we can say a*x-b*(-y)=c
+	// therefore we have multiplies k2 (y) by -1. 
+	// now general solution will be
+	// kfirst= k1+(t*(-m)/gc)  => kfirst = k1 -t*m/gc
+	// ksecond = k1 - t*(n/gc)
+	// as we can see our line has slope 1, so both kfirst and ksecond
+	// will either increase or decrease. t belongs to I
 	while(k1<=0){
 		k1+=(m/gc);
 	}
